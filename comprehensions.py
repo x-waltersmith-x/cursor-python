@@ -9,8 +9,7 @@ for num in range(10):
     else:
         lst.append(num ** 4)
 convert_list = [num ** 2 if num % 2 == 1 else num ** 4 for num in range(10)]
-print(lst)
-print(convert_list)
+print('BEFORE: ', lst, ' AND AFTER: ', convert_list)
 
 
 # (2)
@@ -21,8 +20,7 @@ for num in range(10):
         convert_comp.append(num // 2)
     else:
         convert_comp.append(num * 10)
-print(list_comprehension)
-print(convert_comp)
+print('BEFORE: ', list_comprehension, ' AND AFTER: ', convert_comp)
 
 
 # (3)
@@ -31,8 +29,7 @@ for num in range(1, 11):
     if num % 2 == 1:
         d[num] = num ** 2
 d_comp = {num: num ** 2 for num in range(1, 11) if num % 2 == 1}
-print(d)
-print(d_comp)
+print('BEFORE: ', d, ' AND AFTER: ', d_comp)
 
 
 # (4)
@@ -43,8 +40,7 @@ for num in range(1, 11):
     else:
         d_2[num] = num // 0.5
 d_2_comp = {num: num ** 2 if num % 2 == 1 else num // 0.5 for num in range(1, 11)}
-print(d_2)
-print(d_2_comp)
+print('BEFORE: ', d_2, ' AND AFTER: ', d_2_comp)
 
 
 # (5)
@@ -53,8 +49,7 @@ dict_reg = {}
 for x in range(10):
     if x**3 % 4 == 0:
         dict_reg[x] = x**3
-print(dict_comprehension)
-print(dict_reg)
+print('BEFORE: ', dict_comprehension, ' AND AFTER: ', dict_reg)
 
 
 # (6)
@@ -65,5 +60,4 @@ for x in range(10):
         dict_2_reg[x] = x**3
     else:
         dict_2_reg[x] = x
-print(dict_2_comprehension)
-print(dict_2_reg)
+print('BEFORE: ', dict_2_comprehension, ' AND AFTER: ', dict_2_reg)

@@ -7,8 +7,7 @@ def foo(x, y):
     else:
         return y
 lambda_foo = lambda x, y: x if x < y else y
-print(foo(x=3, y=5))
-print(lambda_foo(x=3, y=5))
+print('BEFORE: ', foo(x=3, y=5), ' AND AFTER: ', lambda_foo(x=3, y=5))
 
 
 #(8)
@@ -18,5 +17,4 @@ def unlambda_foo_2(x, y, z):
         return z
     else:
         return y
-print(foo_2(x=3, y=5, z=7))
-print(unlambda_foo_2(x=3, y=5, z=7))
+print('BEFORE: ', foo_2(x=3, y=5, z=7), ' AND AFTER: ', unlambda_foo_2(x=3, y=5, z=7))

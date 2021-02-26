@@ -5,6 +5,6 @@ peaches = "seven"
 fruits = {"apples": apples, "peaches": peaches}
 
 
-print(f"Anna has {apples:.5s} apples and {peaches:.3s} peaches.".format(apples = apples, peaches = peaches))
+print(f"Anna has {apples:.5} apples and {peaches:.3} peaches.".format(apples = apples, peaches = peaches))
 print(f"Anna has %s apples and %s peaches." % (apples, peaches))
 print(f"Anna has {fruits['apples']} apples and {fruits['peaches']} peaches.")

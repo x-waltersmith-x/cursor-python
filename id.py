@@ -5,21 +5,6 @@ str_b = 'cursor'
 set_c = {1, 2, 3}
 lst_d = [1, 2, 3]
 dict_e = {'a': 1, 'b': 2, 'c': 3}
-
-print(id(int_a))
-print(id(str_b))
-print(id(set_c))
-print(id(lst_d))
-print(id(dict_e))
-
-print(type(int_a))
-print(type(str_b))
-print(type(set_c))
-print(type(lst_d))
-print(type(dict_e))
-
-print(isinstance(int_a, int))
-print(isinstance(str_b, str))
-print(isinstance(set_c, set))
-print(isinstance(lst_d, list))
-print(isinstance(dict_e, dict))
+print('1) ', id(int_a), '2) ', id(str_b), '3) ', id(set_c), '4) ', id(lst_d), '5) ', id(dict_e))
+print('1) ', type(int_a), '2) ', type(str_b), '3) ', type(set_c), '4) ', type(lst_d), '5) ', type(dict_e))
+print('1) ', isinstance(int_a, int), '2) ', isinstance(str_b, str), '3) ', isinstance(set_c, set), '4) ', isinstance(lst_d, list), '5) ', isinstance(dict_e, dict))

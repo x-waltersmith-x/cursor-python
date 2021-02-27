@@ -14,5 +14,5 @@ print("Anna has {apples} apples and {apples} peaches.".format(apples = apples, p
 print("Anna has {0:.5} apples and {1:.3} peaches.".format(apples, peaches))
 # 9, 10 tasks
 print(f"Anna has %s apples and %s peaches." % (apples, peaches))
-#11
+# 11
 print(f"Anna has {apples} apples and {peaches} peaches.".format(**fruits))

@@ -8,3 +8,7 @@ dict_e = {'a': 1, 'b': 2, 'c': 3}
 print('1) ', id(int_a), '2) ', id(str_b), '3) ', id(set_c), '4) ', id(lst_d), '5) ', id(dict_e))
 print('1) ', type(int_a), '2) ', type(str_b), '3) ', type(set_c), '4) ', type(lst_d), '5) ', type(dict_e))
 print('1) ', isinstance(int_a, int), '2) ', isinstance(str_b, str), '3) ', isinstance(set_c, set), '4) ', isinstance(lst_d, list), '5) ', isinstance(dict_e, dict))
+
+lst_d.append(4)
+lst_d.append(5)
+print(id(lst_d))

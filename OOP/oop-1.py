@@ -3,8 +3,8 @@
 
 class Vehicle:
     def __init__(self, max_speed, mileage):
-        self.max_speed = max_speed
-        self.mileage = mileage
+        self._max_speed = max_speed
+        self._mileage = mileage
 
 
 # 2

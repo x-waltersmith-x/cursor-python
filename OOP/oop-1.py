@@ -52,8 +52,8 @@ class SchoolBus(School, Bus):
     def __init__(self, school_id, number_of_students, max_speed, mileage, seating_capacity, bus_school_color):
         School.__init__(self, school_id, number_of_students)
         Bus.__init__(self, max_speed, mileage)
-        self.set_seating_capacity(seating_capacity)
-        self.bus_school_color = bus_school_color
+        self._set_cap(seating_capacity)
+        self._bus_school_color = bus_school_color
 
 
 # 7

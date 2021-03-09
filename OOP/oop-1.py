@@ -116,4 +116,19 @@ summary = CallMethod()
 
 print(summary(1, 2, 3, 4, 5))
 
+
 # 12
+class MyOrder:
+    def __init__(self, cart, customer):
+        self.cart = cart
+        self.customer = customer
+    def __bool__(self):
+        return len(self.cart) != 0
+
+
+first_order = MyOrder(['1', '2', '3'], '4')
+second_order = MyOrder([], '1')
+check_first = bool(first_order)
+check_second = bool(second_order)
+
+print(check_first, check_second)

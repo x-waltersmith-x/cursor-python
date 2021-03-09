@@ -21,11 +21,13 @@ class Bus(Vehicle):
 # 3
 school_bus = Bus(100, 200)
 check_type = type(school_bus)
+
 print(check_type)
 
 
 # 4
 check_bus = isinstance(school_bus, Vehicle)
+
 print(check_bus)
 
 
@@ -82,7 +84,24 @@ class City():
 # 9
 Big_City = City("Lviv", 800000)
 Small_City = City("Zorah", 890)
+
 print(Big_City)
 print(Small_City)
 
 
+# 10
+class Math:
+    def __init__(self, first):
+        self.first = first
+    def __add__(self, second):
+        if self.first > 10 or second.first > 10:
+            return Math(self.first * second.first)
+        return Math(self.first + second.first)
+
+low_result = (Math(8) + Math(5)).first
+high_result = (Math(80) + Math(5)).first
+
+print(f"Low result is {low_result} and hight result is {high_result}")
+
+
+# 11

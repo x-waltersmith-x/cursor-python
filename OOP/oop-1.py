@@ -11,10 +11,10 @@ class Vehicle:
 # 2
 class Bus(Vehicle):
     def set_cap(self, seating_capacity):
-        self._seating_capacity = seating_capacity
+        self.seating_capacity = seating_capacity
     def get_cap(self):
-        if "_seating_capacity" in self.__dict__:
-            return self._seating_capacity
+        if seating_capacity in self.__dict__:
+            return self.seating_capacity
         return None
 
 
@@ -48,8 +48,6 @@ class SchoolBus(School, Bus):
 
 
 # 7
-
-
 class Bear:
     def make_sound(self):
         print("BEAR")
@@ -66,3 +64,25 @@ we_are_animals = (i_am_bear, i_am_wolf)
 
 for animal in we_are_animals:
     animal.make_sound()
+
+
+# 8
+class City():
+    def __init__(self, name, population):
+        self.name = name
+        self.population = population
+    def __new__(cls, name, population):
+        if population > 1500:
+            return super(City, cls).__new__(cls)
+        else:
+            return 'Your city is too small'
+    def __str__(self):
+        return f'The population of the city {self.name} is {self.population}'
+
+# 9
+Big_City = City("Lviv", 800000)
+Small_City = City("Zorah", 890)
+print(Big_City)
+print(Small_City)
+
+

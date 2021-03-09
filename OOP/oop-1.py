@@ -1,6 +1,7 @@
+# OOP part 1
+
+
 # 1
-
-
 class Vehicle:
     def __init__(self, max_speed, mileage):
         self._max_speed = max_speed
@@ -8,8 +9,6 @@ class Vehicle:
 
 
 # 2
-
-
 class Bus(Vehicle):
     def set_cap(self, seating_capacity):
         self._seating_capacity = seating_capacity
@@ -20,23 +19,17 @@ class Bus(Vehicle):
 
 
 # 3
-
-
 school_bus = Bus(100, 200)
 check_type = type(school_bus)
 print(check_type)
 
 
 # 4
-
-
 check_bus = isinstance(school_bus, Vehicle)
 print(check_bus)
 
 
 # 5
-
-
 class School:
     def __init__(self, school_id, number_of_students):
         self._school_id = school_id
@@ -46,8 +39,6 @@ class School:
 
 
 # 6
-
-
 class SchoolBus(School, Bus):
     def __init__(self, school_id, number_of_students, max_speed, mileage, seating_capacity, bus_school_color):
         School.__init__(self, school_id, number_of_students)

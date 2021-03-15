@@ -98,9 +98,7 @@ class Math:
             sum = self.sum * variable.sum
         else:
             sum = self.sum + variable.sum
-        return Math(sum)
-    def __str__(self):
-        return f'{self.sum}'
+        return sum
 
 a = Math(8)
 b = Math(5)

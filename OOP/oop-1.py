@@ -91,17 +91,22 @@ print(Small_City)
 
 # 10
 class Math:
-    def __init__(self, first):
-        self.first = first
-    def __add__(self, second):
-        if self.first > 10 or second.first > 10:
-            return Math(self.first * second.first)
-        return Math(self.first + second.first)
+    def __init__(self, sum):
+        self.sum = sum
+    def __add__(self, variable):
+        if self.sum > 10 or variable.sum > 10:
+            sum = self.sum * variable.sum
+        else:
+            sum = self.sum + variable.sum
+        return Math(sum)
+    def __str__(self):
+        return f'{self.sum}'
 
-low_result = (Math(8) + Math(5)).first
-high_result = (Math(80) + Math(5)).first
+a = Math(8)
+b = Math(5)
+c = Math(80)
 
-print(f"Low result is {low_result} and hight result is {high_result}")
+print(f"Low result is {a + b} and hight result is {c + b}")
 
 
 # 11

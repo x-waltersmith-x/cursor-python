@@ -16,23 +16,24 @@ class Battery:
 # 2.
 class Guitar:
     def __init__(self, strings, type):
-        self.strings = GuitarString
+        self.strings = strings
         self.type = type
 
 class GuitarString:
     def __init__(self, material):
         self.material = material
 
-guitar = Guitar(GuitarString('steel'), 'Electric')
-
+GuitarString.material = 'steel'
+guitar = Guitar(GuitarString.material, 'Electric')
+print(f'This is {guitar.type} guitar with {guitar.strings} strings')
 
 # 3
 class Calc:
     @staticmethod
-    def __add_nums__(x, y, z):
+    def add_nums(x, y, z):
         return x + y + z
 
-print(Calc.__add_nums__(10, 12, 23))
+print(Calc.add_nums(10, 12, 23))
 
 
 # 4.
@@ -54,22 +55,22 @@ class Concert:
     max_visitors_num = 0
 
     def __init__(self, visitors_count=0):
-        self.visitors_count = visitors_count
+        self._visitors_count = visitors_count
 
-        @property
-        def visitors_count(self):
-            return self.visitors_count
+    @property
+    def visitors_count(self):
+        return self._visitors_count
 
-        @visitors_count.setter
-        def visitors_count(self, visitors_count):
-            if visitors_count > self.max_visitors_num:
-                self.visitors_count = max_visitors_num
-            else:
-                self.visitors_count = self.visitors_count
+    @visitors_count.setter
+    def visitors_count(self, visitors_count):
+        if visitors_count < self.max_visitors_num:
+            self._visitors_count = max_visitors_num
+        else:
+            self.visitors_count = self.visitors_count
 
-Concert.max_visitor_num = 200
+Concert.max_visitor_num = 2000
+Concert.visitors_count = 200
 concert = Concert()
-concert.visitors_count = 2000
 print(concert.visitors_count)
 
 

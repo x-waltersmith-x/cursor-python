@@ -112,13 +112,9 @@ print(f"Low result is {a + b} and hight result is {c + b}")
 # 11
 class CallMethod:
     def __call__(self, *args):
-        result = 0
-        for number in args:
-            result += number
-        return result
+        return sum(args)
 
 summary = CallMethod()
-
 print(summary(1, 2, 3, 4, 5))
 
 

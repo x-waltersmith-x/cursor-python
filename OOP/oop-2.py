@@ -8,6 +8,7 @@ class Laptop:
         self.battery = Battery
         self.brand = brand
 
+
 class Battery:
     def __init__(self, capacity):
         self.capacity = capacity
@@ -19,19 +20,23 @@ class Guitar:
         self.strings = strings
         self.type = type
 
+
 class GuitarString:
     def __init__(self, material):
         self.material = material
 
+
 GuitarString.material = 'steel'
 guitar = Guitar(GuitarString.material, 'Electric')
 print(f'This is {guitar.type} guitar with {guitar.strings} strings')
+
 
 # 3
 class Calc:
     @staticmethod
     def add_nums(x, y, z):
         return x + y + z
+
 
 print(Calc.add_nums(10, 12, 23))
 
@@ -63,13 +68,14 @@ class Concert:
 
     @visitors_count.setter
     def visitors_count(self, visitors_count):
-        if visitors_count < self.max_visitors_num:
+        if visitors_count > self.max_visitors_num:
             self._visitors_count = self.max_visitors_num
         else:
             self._visitors_count = self.visitors_count
 
-Concert.max_visitor_num = 2000
-Concert.visitors_count = 200
+
+Concert.max_visitors_num = 200
+Concert.visitors_count = 2000
 concert = Concert()
 print(concert.visitors_count)
 
@@ -77,7 +83,6 @@ print(concert.visitors_count)
 # 6.
 @dataclasses.dataclass
 class AddressBookDataClass:
-
     key: int
     name: str
     phone_number: str
@@ -106,11 +111,13 @@ class AddressBook:
         def __str__(self):
             return f"(key: {self.key}, name: {self.name}, phone_number: {self.phone_number}, address: {self.address}, email: {self.email}, birthday: {self.birthday}, age: {self.age})"
 
+
 # 9.
 class Person:
     name = "John"
     age = 36
     country = "USA"
+
 
 john = Person()
 setattr(john, "age", 28)
@@ -126,17 +133,20 @@ class Student:
         self.id = id
         self.name = name
 
+
 student = Student(911, 'Volodymyr')
 setattr(student, 'student_email', 'vk.iblogic@gmail.com')
 print(getattr(student, 'student_email'))
 
 
 class Celsius:
-    
+
     def __init__(self, temperature=0):
         self._temperature = temperature
+
     @property
     def temperature_Fahrenheit(self):
         return (self._temperature * 1.8) + 32
+
 
 print(Celsius(40).temperature_Fahrenheit)

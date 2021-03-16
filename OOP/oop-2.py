@@ -71,12 +71,12 @@ class Concert:
         if visitors_count > self.max_visitors_num:
             self._visitors_count = self.max_visitors_num
         else:
-            self._visitors_count = self.visitors_count
+            self._visitors_count = visitors_count
 
 
 Concert.max_visitors_num = 200
-Concert.visitors_count = 300
 concert = Concert()
+concert.visitors_count = 300
 print(concert.visitors_count)
 
 

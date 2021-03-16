@@ -64,9 +64,9 @@ class Concert:
     @visitors_count.setter
     def visitors_count(self, visitors_count):
         if visitors_count < self.max_visitors_num:
-            self._visitors_count = max_visitors_num
+            self._visitors_count = self.max_visitors_num
         else:
-            self.visitors_count = self.visitors_count
+            self._visitors_count = self.visitors_count
 
 Concert.max_visitor_num = 2000
 Concert.visitors_count = 200

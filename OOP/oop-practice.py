@@ -17,3 +17,17 @@ class GardenMetaClass(type):
         return cls._instances[cls]
 
 
+class Garden(metaclass=GardenMetaClass):
+    def __init__(self, vegetables, fruits, pests, gardener):
+        self.vegetables = vegetables
+        self.fruits = fruits
+        self.pests = pests
+        self.gardener = gardener
+
+    def show_the_garden(self):
+        print(f'The garden has such vegetables: {self.vegetables}')
+        print(f'Also garden has such fruits: {self.fruits}')
+        print(f'And such pests: {self.pests}')
+        print(f'The maintainer of the garden is {self.gardener}')
+
+

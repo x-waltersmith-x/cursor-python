@@ -160,3 +160,21 @@ class Tomato(Vegetables):
             print(f"It's too late. {self.vegetable_type} is rotten.")
 
 
+class TomatoBush:
+    def __init__(self, num):
+        self.tomatoes = [Tomato(index, 'Cocktail', states, 'Cherry') for index in range(0, num - 1)]
+
+    def grow_all(self):
+        for tomato in self.tomatoes:
+            tomato.grow()
+
+    def all_are_ripe(self):
+        return all([tomato.is_ripe() for tomato in self.tomatoes])
+
+    def provide_harvest(self):
+        self.tomatoes = []
+
+    def __call__(self):
+        return self.tomatoes
+
+

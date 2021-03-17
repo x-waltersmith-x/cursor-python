@@ -95,3 +95,68 @@ class Fruit(ABC):
         raise NotImplementedError('The method is missing.')
 
 
+class Gardener(ABC):
+    def __init__(self, name, plants):
+        self.name = name
+        self.plants = plants
+
+    @abstractmethod
+    def harvest(self):
+        raise NotImplementedError('The method is missing.')
+
+    @abstractmethod
+    def poison_pests(self):
+        raise NotImplementedError('The method is missing.')
+
+    @abstractmethod
+    def handling(self):
+        raise NotImplementedError('The method is missing.')
+
+    @abstractmethod
+    def check_states(self):
+        raise NotImplementedError('The method is missing.')
+
+
+class Pests(ABC):
+    def __init__(self, pests_type, quantity):
+        self.pests_type = pests_type
+        self.quantity = quantity
+
+    @abstractmethod
+    def eat(self):
+        raise NotImplementedError('Your method is not implemented')
+
+
+class Tomato(Vegetables):
+    def __init__(self, index, vegetable_type, states, name):
+        super(Tomato, self).__init__(states, vegetable_type, name)
+        self.index = index
+        self.vegetable_type = vegetable_type
+        self.state = 0
+
+    def grow(self):
+        self._change_state()
+
+    def is_ripe(self):
+        if self.state == 3:
+            return True
+        return False
+
+    def _change_state(self):
+        if self.state < 3:
+            self.state += 1
+        self.print_state()
+
+    def print_state(self):
+        if self.state == 0:
+            print(f'{self.vegetable_type} is only planted.')
+        elif self.state == 1:
+            print(f'{self.vegetable_type} is flowering.')
+        elif self.state == 2:
+            print(f'{self.vegetable_type} is not ready. Wait a little bit more.')
+        elif self.state == 3:
+            print(f"{self.vegetable_type} is ripe. It's time to harvest.")
+        else:
+            print(f"It's too late. {self.vegetable_type} is rotten.")
+
+

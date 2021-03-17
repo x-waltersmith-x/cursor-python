@@ -38,3 +38,32 @@ class PlantsStates:
     green: int
     red: int
     rotten: int
+
+
+class Vegetables(ABC):
+    def __init__(self, states, vegetable_type, name):
+        self.states = states
+        self.vegetable_type = vegetable_type
+        self.name = name
+
+    @property
+    def vegetable_type(self):
+        return self._vegetable_type
+
+    @vegetable_type.setter
+    def vegetable_type(self, vegetable_type):
+        if vegetable_type in VEGETABLES:
+            self._vegetable_type = vegetable_type
+            print('all ok')
+        else:
+            raise Exception(f'There is no such a vegetable in the list. Your vegetable: {vegetable_type}')
+
+    @abstractmethod
+    def grow(self):
+        raise NotImplementedError('Your method is not implemented.')
+
+    @abstractmethod
+    def is_ripe(self):
+        raise NotImplementedError('Your method is not implemented.')
+
+

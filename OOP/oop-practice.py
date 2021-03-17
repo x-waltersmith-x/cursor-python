@@ -67,3 +67,31 @@ class Vegetables(ABC):
         raise NotImplementedError('Your method is not implemented.')
 
 
+class Fruit(ABC):
+    def __init__(self, states, fruits_type, name):
+        self.states = states
+        self.fruits_type = fruits_type
+        self.name = name
+
+    @property
+    def fruits_type(self):
+        return self._fruits_type
+
+    @fruits_type.setter
+    def fruits_type(self, fruits_type):
+        if fruits_type in FRUITS:
+            self._fruits_type = fruits_type
+            print('all ok')
+        else:
+            raise Exception(f'There is no such a fruit in the list. '
+                            f'Your fruit {fruits_type} and list {FRUITS}')
+
+    @abstractmethod
+    def grow(self):
+        raise NotImplementedError('The method is missing.')
+
+    @abstractmethod
+    def is_ripe(self):
+        raise NotImplementedError('The method is missing.')
+
+

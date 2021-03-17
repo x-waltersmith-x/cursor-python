@@ -31,3 +31,10 @@ class Garden(metaclass=GardenMetaClass):
         print(f'The maintainer of the garden is {self.gardener}')
 
 
+@dataclasses.dataclass()
+class PlantsStates:
+    nothing: int
+    flowering: int
+    green: int
+    red: int
+    rotten: int

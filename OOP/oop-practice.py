@@ -265,3 +265,43 @@ class StarGardener(Gardener):
                     return False
 
 
+class AbstractPests(Pests):
+    def __init__(self, pests_type, quantity):
+        super(AbstractPests, self).__init__(pests_type, quantity)
+        self.pests_type = pests_type
+        self.quantity = quantity
+
+    def eat(self):
+        for tomato in range(len(Garden().vegetables)):
+            if self.quantity > 0:
+                tomato += 1
+                print('Number of tomatoes eaten by pests:', tomato)
+            else:
+                print('No pests to eat vegetables')
+        for apple in range(len(Garden().fruits)):
+            if self.quantity > 0:
+                apple += 1
+                print('Number of apples eaten by pests:', apple)
+            else:
+                print('No pests to eat vegetables')
+        print("All fruits and vegetables are eaten by pests")
+
+
+if __name__ == '__main__':
+
+    # Creating list of instances for vegetables and fruits, pests and gardener
+    tomato_bush = TomatoBush(4)
+    apple_tree = AppleTree(3)
+    pests = AbstractPests('worms', 3)
+    tom = StarGardener('Tom', [tomato_bush, apple_tree])
+    # creating only one garden instance with vegetables and fruits
+    garden = Garden(["Cocktail", "Cherry"], ["Winter", "Green"], "Worms", "Tom")
+    garden.show_the_garden()
+    state = tom.check_states()
+    # if not state:
+    #     gardener.handling()
+    for i in range(3):
+        tom.handling()
+    pests.eat()
+    tom.harvest()
+    tom.poison_pests()

@@ -265,9 +265,9 @@ class StarGardener(Gardener):
                     return False
 
 
-class AbstractPests(Pests):
+class UnrealPests(Pests):
     def __init__(self, pests_type, quantity):
-        super(AbstractPests, self).__init__(pests_type, quantity)
+        super(UnrealPests, self).__init__(pests_type, quantity)
         self.pests_type = pests_type
         self.quantity = quantity
 
@@ -292,7 +292,7 @@ if __name__ == '__main__':
     # Creating list of instances for vegetables and fruits, pests and gardener
     tomato_bush = TomatoBush(4)
     apple_tree = AppleTree(3)
-    pests = AbstractPests('worms', 3)
+    pests = UnrealPests('worms', 5)
     tom = StarGardener('Tom', [tomato_bush, apple_tree])
     # creating only one garden instance with vegetables and fruits
     garden = Garden(["Cocktail", "Cherry"], ["Winter", "Green"], "Worms", "Tom")

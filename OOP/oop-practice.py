@@ -292,7 +292,7 @@ if __name__ == '__main__':
     # Creating list of instances for vegetables and fruits, pests and gardener
     tomato_bush = TomatoBush(4)
     apple_tree = AppleTree(3)
-    pests = UnrealPests('worms', 5)
+    pests = UnrealPests('worms', 10)
     tom = StarGardener('Tom', [tomato_bush, apple_tree])
     # creating only one garden instance with vegetables and fruits
     garden = Garden(["Cocktail", "Cherry"], ["Winter", "Green"], "Worms", "Tom")

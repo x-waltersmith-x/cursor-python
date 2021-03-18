@@ -178,3 +178,90 @@ class TomatoBush:
         return self.tomatoes
 
 
+class Apple(Fruit):
+    def __init__(self, index, fruits_type, states, name):
+        super(Apple, self).__init__(states, fruits_type, name)
+        self.index = index
+        self.fruits_type = fruits_type
+        self.state = 0
+
+    def grow(self):
+        self._change_state()
+
+    def is_ripe(self):
+        if self.state == 3:
+            return True
+        return False
+
+    def _change_state(self):
+        if self.state < 3:
+            self.state += 1
+        self.print_state()
+
+    def print_state(self):
+        if self.state == 0:
+            print(f'{self.fruits_type} is only planted.')
+        elif self.state == 1:
+            print(f'{self.fruits_type} is flowering.')
+        elif self.state == 2:
+            print(f'{self.fruits_type} is not ready. Wait a little bit more.')
+        elif self.state == 3:
+            print(f"{self.fruits_type} is ripe. It's time to harvest.")
+        else:
+            print(f"It's too late. {self.fruits_type} is rotten.")
+
+
+class AppleTree:
+    def __init__(self, num):
+        self.apples = [Apple(index, 'Winter', states, 'King') for index in range(0, num - 1)]
+
+    def grow_all(self):
+        for apple in self.apples:
+            apple.grow()
+
+    def all_are_ripe(self):
+        return all([apple.is_ripe() for apple in self.apples])
+
+    def provide_harvest(self):
+        self.apples = []
+
+    def __call__(self):
+        return self.apples
+
+
+class StarGardener(Gardener):
+    def __init__(self, name, plants):
+        super(StarGardener, self).__init__(name, plants)
+        self.name = name
+        self.plants = plants
+
+    def harvest(self):
+        print('Gardener is harvesting...')
+        for plant in self.plants:
+            if plant.all_are_ripe():
+                plant.provide_harvest()
+                print('Harvesting is finished.')
+            else:
+                print('Too early! Your plants are not ripe.')
+
+    def handling(self):
+        print('Gardner is working...')
+        for plant in self.plants:
+            plant.grow_all()
+        print('Gardner has finished')
+
+    def poison_pests(self):
+        for pest in range(pests.quantity):
+            pest += 1
+            print('Number of poisoned pests:', pest)
+        print("All pests are dead")
+
+    def check_states(self):
+        for all_plants in self.plants:
+            for plant in all_plants():
+                if plant.state == 3:
+                    return True
+                else:
+                    return False
+
+
